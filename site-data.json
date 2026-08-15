@@ -95,14 +95,14 @@
   ],
   "products": [
     {
-      "id": "p-1786791615693",
+      "id": "p-1786791710528",
       "name": "Sneckers",
       "category": "Choklad",
-      "description": "Choklad för allaaa.",
-      "image": "media/product-1786791650829.jpg",
+      "description": "Kort beskrivning.",
+      "image": "media/product-1786791716371.jpg",
       "price": 12,
       "oldPrice": 0,
-      "stock": 400,
+      "stock": 30,
       "badge": "",
       "active": true,
       "featured": false,
@@ -179,7 +179,7 @@
     }
   ],
   "meta": {
-    "lastPublished": "2026-08-15 13:01:14"
+    "lastPublished": "2026-08-15 13:02:31"
   },
   "shop": {
     "enabled": true,
