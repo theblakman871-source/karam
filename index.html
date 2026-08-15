@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050507">
+<title>Respect CFW</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050507;--panel:#0e0c13;--panel2:#15111c;--line:#292133;--text:#faf8ff;--muted:#928a99;--p:#9333ea;--p2:#6b21a8;--soft:#c084fc}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 12% 0%,rgba(126,34,206,.25),transparent 28%),radial-gradient(circle at 88% 12%,rgba(147,51,234,.14),transparent 24%),#050507;color:var(--text);font-family:"Inter","Cairo",sans-serif}
+a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}.wrap{width:min(1180px,calc(100% - 40px));margin:auto}
+header{height:78px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(168,85,247,.14);position:sticky;top:0;z-index:20;background:rgba(5,5,7,.82);backdrop-filter:blur(14px)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800}.logo{width:40px;height:40px;border-radius:13px;display:grid;place-items:center;border:1px solid rgba(168,85,247,.45);background:linear-gradient(145deg,rgba(126,34,206,.35),rgba(20,8,30,.55));color:#e9d5ff}.brand b{color:#c084fc}
+nav{display:flex;gap:30px;color:#aaa2af;font-size:14px}.actions{display:flex;gap:10px}.btn,.icon{height:42px;border-radius:12px;border:1px solid #2b2432;background:#110f16;color:white;cursor:pointer}.btn{padding:0 14px}.icon{width:44px}.admin-btn{border-color:rgba(168,85,247,.35);color:#d8b4fe}
+.hero{min-height:630px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:55px;padding:70px 0}.eyebrow{display:inline-flex;padding:9px 13px;border:1px solid rgba(168,85,247,.22);border-radius:999px;color:#c084fc;background:rgba(126,34,206,.08);font-size:12px;font-weight:800}
+h1{font-size:clamp(48px,6vw,82px);line-height:.98;letter-spacing:-.055em;margin:22px 0 18px}.gradient{display:block;background:linear-gradient(90deg,#7e22ce,#c084fc,#e9d5ff);-webkit-background-clip:text;color:transparent}
+.hero p{color:#aaa2af;line-height:1.9;font-size:17px;max-width:650px}.primary,.secondary{min-height:48px;border-radius:13px;padding:0 20px;display:inline-flex;align-items:center;justify-content:center;font-weight:800;cursor:pointer}.primary{border:0;background:linear-gradient(135deg,#9333ea,#6b21a8);color:white}.secondary{border:1px solid #2c2534;background:#110f16;color:white}.buttons{display:flex;gap:12px;flex-wrap:wrap}
+.visual{height:420px;display:grid;place-items:center}.show{width:88%;height:82%;border:1px solid rgba(255,255,255,.08);border-radius:24px;background:linear-gradient(150deg,#1c1723,#0b0910);padding:14px;box-shadow:0 40px 90px rgba(0,0,0,.45)}.preview{height:270px;border-radius:17px;display:grid;place-items:center;background:radial-gradient(circle at 50% 80%,rgba(126,34,206,.36),transparent 40%),#09080d;font-size:96px}.meta{display:flex;justify-content:space-between;padding:18px 7px}.meta small{display:block;color:#756d7d;font-size:9px;letter-spacing:.14em}.meta strong{font-size:14px}.meta span{color:#d8b4fe;font-weight:800}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin:25px 0 30px}.mini{color:#c084fc;font-size:11px;font-weight:800;letter-spacing:.14em}.section-head h2{font-size:clamp(32px,4vw,48px);margin:8px 0}.section-head p{color:#85808c;margin:0}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;padding-bottom:110px}.product{border:1px solid #221e28;border-radius:22px;overflow:hidden;background:linear-gradient(145deg,#121018,#09080c)}.product-image{height:220px;display:grid;place-items:center;position:relative;background:radial-gradient(circle at 50% 90%,rgba(126,34,206,.3),transparent 40%),#09080d;font-size:82px}.badge{position:absolute;top:15px;right:15px;padding:7px 10px;border-radius:999px;border:1px solid rgba(168,85,247,.3);background:rgba(147,51,234,.12);color:#e9d5ff;font-size:10px;font-weight:800}.body{padding:20px}.body h3{font-size:21px;margin:8px 0}.body p{color:#85808c;line-height:1.8;font-size:13px;min-height:45px}.compat{color:#746d79;font-size:11px;margin:12px 0 17px}.bottom{display:flex;justify-content:space-between;align-items:center;gap:14px;padding-top:15px;border-top:1px solid #1f1b25}.price strong{font-size:21px}.add{height:40px;border-radius:11px;border:1px solid #312a39;background:#15121a;color:white;padding:0 13px;font-weight:800;font-size:12px;cursor:pointer}
+footer{padding:30px 0 45px;border-top:1px solid #1c1821;color:#6f6975;font-size:12px;display:flex;justify-content:space-between;gap:20px}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(8px);z-index:80;display:none}.overlay.show{display:block}
+.drawer{position:fixed;top:0;left:-450px;width:min(440px,100%);height:100vh;background:#0d0b11;z-index:90;transition:.3s;display:flex;flex-direction:column;border-right:1px solid #2a2231}.drawer.open{left:0}.drawer-head{padding:22px;border-bottom:1px solid #211c27;display:flex;justify-content:space-between;align-items:center}.drawer-body{flex:1;overflow:auto;padding:16px}.drawer-foot{padding:18px;border-top:1px solid #211c27}.cart-item{display:grid;grid-template-columns:56px 1fr 28px;gap:12px;align-items:center;border:1px solid #211c27;background:#121018;border-radius:13px;padding:12px;margin-bottom:10px}.thumb{height:54px;border-radius:10px;background:#09080c;display:grid;place-items:center;font-size:27px}.subtotal{display:flex;justify-content:space-between;margin-bottom:12px}
+.payopts{display:grid;gap:10px}.paybtn{min-height:44px;border-radius:11px;border:1px solid #32283d;background:#17121d;color:#fff;cursor:pointer}.paybtn.revolut{background:linear-gradient(135deg,#9333ea,#5b21b6)}
+.admin{position:fixed;inset:0;z-index:120;display:none;background:#07060a}.admin.open{display:block}.admin-shell{height:100%;display:grid;grid-template-columns:290px 1fr}.admin-side{border-right:1px solid #241d2b;background:#0d0b11;padding:22px}.admin-main{overflow:auto;padding:28px}.admin-side h2{margin:0 0 20px}.admin-nav{display:grid;gap:8px}.admin-nav button{height:44px;border-radius:10px;border:1px solid #2a2231;background:#131018;color:#aaa2af;text-align:left;padding:0 14px;cursor:pointer}.admin-nav button.active{color:white;border-color:rgba(168,85,247,.5);background:rgba(126,34,206,.12)}
+.panel{display:none}.panel.active{display:block}.panel h3{font-size:28px;margin:0 0 20px}.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.field{display:grid;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:12px;color:#a59ca9}.field input,.field textarea,.field select{width:100%;border:1px solid #2c2433;background:#100d15;color:white;border-radius:10px;padding:11px}.field textarea{min-height:100px;resize:vertical}.save{margin-top:16px}.product-edit{border:1px solid #251e2d;border-radius:16px;padding:16px;margin-bottom:14px;background:#100d15}.product-edit h4{margin:0 0 13px}
+.admin-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}.close-admin{height:40px;border-radius:10px;border:1px solid #2a2231;background:#15111b;color:white;padding:0 14px;cursor:pointer}
+.login{position:fixed;inset:0;z-index:130;display:none;place-items:center;background:rgba(0,0,0,.86)}.login.open{display:grid}.login-box{width:min(390px,calc(100% - 30px));border:1px solid #2b2233;border-radius:18px;background:#110e16;padding:24px}.login-box h3{margin-top:0}.login-box input{width:100%;height:44px;border-radius:10px;border:1px solid #2d2535;background:#0b0910;color:white;padding:0 12px;margin:10px 0}
+.notice{font-size:12px;color:#8d8593;line-height:1.7;border:1px solid #2a2230;background:#0f0c13;padding:12px;border-radius:10px;margin-top:14px}
+@media(max-width:900px){nav{display:none}.hero{grid-template-columns:1fr;text-align:center}.hero p{margin-left:auto;margin-right:auto}.buttons{justify-content:center}.grid{grid-template-columns:1fr}.admin-shell{grid-template-columns:1fr}.admin-side{border-right:0;border-bottom:1px solid #241d2b}.admin-nav{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:620px){.wrap{width:calc(100% - 26px)}.hero{padding-top:45px}.hero h1{font-size:44px}.visual{height:320px}.show{width:98%}.preview{height:190px;font-size:70px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.admin-main{padding:18px}.admin-side{padding:14px}.admin-nav{grid-template-columns:1fr 1fr}.brand{font-size:13px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<a class="brand" href="#"><span class="logo">R</span><span>RESPECT <b>CFW</b></span></a>
+<nav><a href="#">الرئيسية</a><a href="#products">السكربتات</a><a href="#products">الأكثر مبيعاً</a><a href="#">الدعم</a></nav>
+<div class="actions"><button class="btn" id="langBtn">EN</button><button class="btn admin-btn" id="adminBtn">ADMIN</button><button class="icon" id="cartBtn">🛒</button></div>
+</header>
+
+<section class="hero">
+<div>
+<div class="eyebrow" id="eyebrow"></div>
+<h1><span id="heroA"></span><span class="gradient" id="heroB"></span></h1>
+<p id="heroText"></p>
+<div class="buttons"><a href="#products" class="primary" id="explore"></a><button class="secondary" id="heroCart"></button></div>
+</div>
+<div class="visual"><div class="show"><div class="preview" id="heroIcon">🏁</div><div class="meta"><div><small>FEATURED RESOURCE</small><strong id="featuredName"></strong></div><span id="featuredPrice">$29.99</span></div></div></div>
+</section>
+
+<section id="products">
+<div class="section-head"><div><span class="mini">FIVEM RESOURCES</span><h2 id="sectionTitle"></h2><p id="sectionSub"></p></div></div>
+<div class="grid" id="grid"></div>
+</section>
+
+<footer><a class="brand" href="#"><span class="logo">R</span><span>RESPECT <b>CFW</b></span></a><span>© 2026 Respect CFW. All rights reserved.</span></footer>
+</div>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer">
+<div class="drawer-head"><h3 id="cartTitle">السلة</h3><button class="icon" id="closeCart">✕</button></div>
+<div class="drawer-body" id="cartList"></div>
+<div class="drawer-foot"><div class="subtotal"><span id="subtotalLabel"></span><strong id="subtotal">$0.00</strong></div><div class="payopts"><button class="paybtn revolut" id="revolutPay">Revolut</button><button class="paybtn" id="paypalPay">PayPal</button></div></div>
+</aside>
+
+<div class="login" id="login">
+<div class="login-box">
+<h3>Admin Login</h3>
+<input id="pinInput" type="password" placeholder="Admin PIN">
+<button class="primary" style="width:100%" id="loginGo">Logga in</button>
+<div class="notice">Den här PIN-koden är bara ett lokalt skydd i en statisk GitHub Pages-fil. För riktig säker admin-inloggning behöver vi backend/autentisering.</div>
+</div>
+</div>
+
+<div class="admin" id="admin">
+<div class="admin-shell">
+<aside class="admin-side">
+<h2>Respect CFW</h2>
+<div class="admin-nav">
+<button class="active" data-panel="content">Innehåll</button>
+<button data-panel="products">Produkter</button>
+<button data-panel="payments">Betalning</button>
+<button data-panel="data">Data</button>
+</div>
+</aside>
+<main class="admin-main">
+<div class="admin-top"><div><small style="color:#8c8491">ADMIN PANEL</small><h2 style="margin:5px 0 0">Kontrollcenter</h2></div><button class="close-admin" id="closeAdmin">Stäng</button></div>
+
+<section class="panel active" id="panel-content">
+<h3>Hemsidans innehåll</h3>
+<div class="form-grid">
+<div class="field"><label>Hero titel arabiska</label><input id="a_heroA"></div>
+<div class="field"><label>Hero titel engelska</label><input id="e_heroA"></div>
+<div class="field"><label>Hero rad 2 arabiska</label><input id="a_heroB"></div>
+<div class="field"><label>Hero rad 2 engelska</label><input id="e_heroB"></div>
+<div class="field full"><label>Hero text arabiska</label><textarea id="a_heroText"></textarea></div>
+<div class="field full"><label>Hero text engelska</label><textarea id="e_heroText"></textarea></div>
+<div class="field"><label>Sektionstitel arabiska</label><input id="a_sectionTitle"></div>
+<div class="field"><label>Sektionstitel engelska</label><input id="e_sectionTitle"></div>
+<div class="field"><label>Hero emoji/bildsymbol</label><input id="hero_icon"></div>
+</div>
+<button class="primary save" id="saveContent">Spara ändringar</button>
+</section>
+
+<section class="panel" id="panel-products">
+<h3>Produkter</h3>
+<div id="productEditors"></div>
+<button class="secondary" id="addProduct">+ Lägg till produkt</button>
+<button class="primary save" id="saveProducts">Spara produkter</button>
+</section>
+
+<section class="panel" id="panel-payments">
+<h3>Checkout & betalning</h3>
+<div class="form-grid">
+<div class="field full"><label>Revolut betalningslänk</label><input id="revolut_url" placeholder="https://..."></div>
+<div class="field full"><label>PayPal betalningslänk</label><input id="paypal_url" placeholder="https://..."></div>
+<div class="field"><label>Valuta</label><select id="currency"><option value="$">USD ($)</option><option value="€">EUR (€)</option><option value="kr">SEK (kr)</option></select></div>
+<div class="field"><label>Admin PIN</label><input id="admin_pin" type="password"></div>
+</div>
+<button class="primary save" id="savePayments">Spara betalning</button>
+<div class="notice">Revolut/PayPal-knappen öppnar din betalningslänk. Den här statiska versionen kan inte automatiskt kontrollera att betalningen är genomförd. För automatisk verifiering och skyddade nedladdningar behöver vi koppla backend.</div>
+</section>
+
+<section class="panel" id="panel-data">
+<h3>Backup & publicering</h3>
+<div class="buttons">
+<button class="secondary" id="exportBtn">Exportera JSON</button>
+<label class="secondary" style="cursor:pointer">Importera JSON<input type="file" id="importFile" accept=".json" hidden></label>
+<button class="secondary" id="resetBtn">Återställ standard</button>
+</div>
+<div class="notice">Adminändringar sparas i den här webbläsarens localStorage. De ändrar inte automatiskt filen på GitHub för alla besökare. Exportera JSON som backup. Nästa steg kan vara Supabase eller annan backend så adminändringar blir globala direkt.</div>
+</section>
+
+</main>
+</div>
+</div>
+
+<script>
+const defaults={
+ lang:"ar",
+ adminPin:"2468",
+ currency:"$",
+ revolutUrl:"",
+ paypalUrl:"",
+ heroIcon:"🏁",
+ content:{
+  ar:{eyebrow:"✦ متجر موارد FiveM احترافي",heroA:"ابنِ سيرفرك",heroB:"بموارد أقوى.",heroText:"سكربتات مختارة بعناية، أنظمة مميزة وتجربة شراء سريعة لسيرفرات FiveM الاحترافية.",sectionTitle:"المنتجات المميزة",sectionSub:"موارد احترافية جاهزة للارتقاء بتجربة اللاعبين على سيرفرك.",explore:"استكشف المنتجات ←",cart:"السلة",subtotal:"المجموع",compat:"التوافق",add:"أضف للسلة",empty:"سلة التسوق فارغة"},
+  en:{eyebrow:"✦ Premium FiveM marketplace",heroA:"Build your server",heroB:"with better resources.",heroText:"Curated scripts, polished systems and a fast buying experience for ambitious FiveM servers.",sectionTitle:"Featured resources",sectionSub:"Professional assets ready to elevate your players' experience.",explore:"Explore products →",cart:"Cart",subtotal:"Subtotal",compat:"Compatibility",add:"Add to cart",empty:"Your cart is empty"}
+ },
+ products:[
+  {id:1,titleAr:"نظام سيارات فاخر",titleEn:"Luxury Vehicle System",descAr:"تجربة متكاملة للسيارات مع واجهة حديثة ومفاتيح ذكية وإدارة متقدمة.",descEn:"A complete vehicle experience with modern UI, smart keys and advanced management.",price:29.99,oldPrice:39.99,tagAr:"الأكثر مبيعاً",tagEn:"Best seller",framework:"QBCore / ESX",icon:"🏎️"},
+  {id:2,titleAr:"نظام وظائف متطور",titleEn:"Advanced Jobs Pack",descAr:"وظائف تفاعلية مع مهام وترقيات وسجل نشاط ولوحة تحكم احترافية.",descEn:"Interactive jobs with tasks, progression, activity logs and a polished dashboard.",price:24.99,oldPrice:0,tagAr:"جديد",tagEn:"New",framework:"QBCore",icon:"🧰"},
+  {id:3,titleAr:"نظام شرطة Premium",titleEn:"Premium Police Suite",descAr:"حزمة متكاملة للشرطة تشمل MDT والأدلة والبلاغات وإدارة الوحدات.",descEn:"Complete police suite with MDT, evidence, dispatch and unit management.",price:44.99,oldPrice:54.99,tagAr:"Premium",tagEn:"Premium",framework:"ESX / QBCore",icon:"🚓"},
+  {id:4,titleAr:"نظام جراج ذكي",titleEn:"Smart Garage",descAr:"جراج سريع وأنيق مع صور المركبات وحالة السيارة ومواقع متعددة.",descEn:"Fast garage with vehicle imagery, condition state and multiple locations.",price:18.99,oldPrice:0,tagAr:"Premium",tagEn:"Premium",framework:"Standalone",icon:"🅿️"}
+ ]
+};
+
+const KEY="respectCFWDataV3";
+let data=load(),cart=[];
+function clone(o){return JSON.parse(JSON.stringify(o))}
+function load(){try{const x=JSON.parse(localStorage.getItem(KEY));return x?Object.assign(clone(defaults),x):clone(defaults)}catch(e){return clone(defaults)}}
+function save(){localStorage.setItem(KEY,JSON.stringify(data))}
+const $=id=>document.getElementById(id);
+function txt(){return data.content[data.lang]}
+function money(v){return data.currency==="$"?`$${Number(v).toFixed(2)}`:data.currency==="€"?`€${Number(v).toFixed(2)}`:`${Number(v).toFixed(2)} kr`}
+
+function render(){
+ const t=txt();document.documentElement.lang=data.lang;document.documentElement.dir=data.lang==="ar"?"rtl":"ltr";
+ $("langBtn").textContent=data.lang==="ar"?"EN":"AR";
+ $("eyebrow").textContent=t.eyebrow;$("heroA").textContent=t.heroA;$("heroB").textContent=t.heroB;$("heroText").textContent=t.heroText;
+ $("explore").textContent=t.explore;$("heroCart").textContent="🛒 "+t.cart;$("heroIcon").textContent=data.heroIcon;$("sectionTitle").textContent=t.sectionTitle;$("sectionSub").textContent=t.sectionSub;
+ $("cartTitle").textContent=t.cart;$("subtotalLabel").textContent=t.subtotal;
+ const fp=data.products[0];if(fp){$("featuredName").textContent=data.lang==="ar"?fp.titleAr:fp.titleEn;$("featuredPrice").textContent=money(fp.price)}
+ $("grid").innerHTML=data.products.map(p=>`<article class="product"><div class="product-image"><span class="badge">${data.lang==="ar"?p.tagAr:p.tagEn}</span>${p.icon}</div><div class="body"><h3>${data.lang==="ar"?p.titleAr:p.titleEn}</h3><p>${data.lang==="ar"?p.descAr:p.descEn}</p><div class="compat">⌘ ${t.compat}: ${p.framework}</div><div class="bottom"><div class="price"><strong>${money(p.price)}</strong>${p.oldPrice?` <del style="color:#665e6b;font-size:12px">${money(p.oldPrice)}</del>`:""}</div><button class="add" onclick="addToCart(${p.id})">🛒 ${t.add}</button></div></div></article>`).join("");
+ renderCart();
+}
+function renderCart(){
+ const t=txt();$("subtotal").textContent=money(cart.reduce((a,b)=>a+Number(b.price),0));
+ $("cartList").innerHTML=cart.length?cart.map(p=>`<div class="cart-item"><div class="thumb">${p.icon}</div><div><strong>${data.lang==="ar"?p.titleAr:p.titleEn}</strong><br><small style="color:#786f7d">${p.framework}</small><br><b style="color:#d8b4fe">${money(p.price)}</b></div><button class="remove" onclick="removeCart(${p.id})">✕</button></div>`).join(""):`<div style="text-align:center;color:#807886;padding:50px 10px">${t.empty}</div>`;
+}
+function addToCart(id){if(!cart.some(x=>x.id===id))cart.push(data.products.find(x=>x.id===id));openCart()}
+function removeCart(id){cart=cart.filter(x=>x.id!==id);renderCart()}
+function openCart(){$("drawer").classList.add("open");$("overlay").classList.add("show")}
+function closeCart(){$("drawer").classList.remove("open");$("overlay").classList.remove("show")}
+$("cartBtn").onclick=openCart;$("heroCart").onclick=openCart;$("closeCart").onclick=closeCart;$("overlay").onclick=closeCart;
+$("langBtn").onclick=()=>{data.lang=data.lang==="ar"?"en":"ar";save();render()}
+
+function pay(url,type){
+ if(!cart.length){alert(data.lang==="ar"?"السلة فارغة":"Your cart is empty");return}
+ if(!url){alert(data.lang==="ar"?`لم تتم إضافة رابط ${type} بعد.`:`No ${type} link has been configured yet.`);return}
+ window.open(url,"_blank","noopener");
+}
+$("revolutPay").onclick=()=>pay(data.revolutUrl,"Revolut");
+$("paypalPay").onclick=()=>pay(data.paypalUrl,"PayPal");
+
+$("adminBtn").onclick=()=>{$("login").classList.add("open");$("pinInput").focus()}
+$("loginGo").onclick=()=>{if($("pinInput").value===data.adminPin){$("login").classList.remove("open");$("admin").classList.add("open");fillAdmin()}else alert("Fel PIN")}
+$("closeAdmin").onclick=()=>$("admin").classList.remove("open");
+document.querySelectorAll(".admin-nav button").forEach(b=>b.onclick=()=>{document.querySelectorAll(".admin-nav button").forEach(x=>x.classList.remove("active"));b.classList.add("active");document.querySelectorAll(".panel").forEach(x=>x.classList.remove("active"));$("panel-"+b.dataset.panel).classList.add("active")})
+
+function fillAdmin(){
+ $("a_heroA").value=data.content.ar.heroA;$("e_heroA").value=data.content.en.heroA;$("a_heroB").value=data.content.ar.heroB;$("e_heroB").value=data.content.en.heroB;
+ $("a_heroText").value=data.content.ar.heroText;$("e_heroText").value=data.content.en.heroText;$("a_sectionTitle").value=data.content.ar.sectionTitle;$("e_sectionTitle").value=data.content.en.sectionTitle;$("hero_icon").value=data.heroIcon;
+ $("revolut_url").value=data.revolutUrl;$("paypal_url").value=data.paypalUrl;$("currency").value=data.currency;$("admin_pin").value=data.adminPin;renderProductEditors();
+}
+$("saveContent").onclick=()=>{
+ data.content.ar.heroA=$("a_heroA").value;data.content.en.heroA=$("e_heroA").value;data.content.ar.heroB=$("a_heroB").value;data.content.en.heroB=$("e_heroB").value;
+ data.content.ar.heroText=$("a_heroText").value;data.content.en.heroText=$("e_heroText").value;data.content.ar.sectionTitle=$("a_sectionTitle").value;data.content.en.sectionTitle=$("e_sectionTitle").value;data.heroIcon=$("hero_icon").value||"🏁";save();render();alert("Sparat")
+}
+$("savePayments").onclick=()=>{data.revolutUrl=$("revolut_url").value.trim();data.paypalUrl=$("paypal_url").value.trim();data.currency=$("currency").value;data.adminPin=$("admin_pin").value||"2468";save();render();alert("Sparat")}
+
+function renderProductEditors(){
+ $("productEditors").innerHTML=data.products.map((p,i)=>`<div class="product-edit" data-index="${i}"><h4>Produkt ${i+1}</h4><div class="form-grid">
+ <div class="field"><label>Titel AR</label><input data-k="titleAr" value="${esc(p.titleAr)}"></div><div class="field"><label>Titel EN</label><input data-k="titleEn" value="${esc(p.titleEn)}"></div>
+ <div class="field full"><label>Beskrivning AR</label><textarea data-k="descAr">${esc(p.descAr)}</textarea></div><div class="field full"><label>Beskrivning EN</label><textarea data-k="descEn">${esc(p.descEn)}</textarea></div>
+ <div class="field"><label>Pris</label><input data-k="price" type="number" step=".01" value="${p.price}"></div><div class="field"><label>Ordinarie pris</label><input data-k="oldPrice" type="number" step=".01" value="${p.oldPrice||0}"></div>
+ <div class="field"><label>Framework</label><input data-k="framework" value="${esc(p.framework)}"></div><div class="field"><label>Emoji/bildsymbol</label><input data-k="icon" value="${esc(p.icon)}"></div>
+ <div class="field"><label>Badge AR</label><input data-k="tagAr" value="${esc(p.tagAr)}"></div><div class="field"><label>Badge EN</label><input data-k="tagEn" value="${esc(p.tagEn)}"></div>
+ </div><button class="secondary" style="margin-top:12px" onclick="deleteProduct(${i})">Ta bort</button></div>`).join("")
+}
+function esc(s){return String(s??"").replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+window.deleteProduct=i=>{data.products.splice(i,1);renderProductEditors()}
+$("addProduct").onclick=()=>{data.products.push({id:Date.now(),titleAr:"منتج جديد",titleEn:"New Product",descAr:"وصف المنتج",descEn:"Product description",price:10,oldPrice:0,tagAr:"جديد",tagEn:"New",framework:"Standalone",icon:"🎮"});renderProductEditors()}
+$("saveProducts").onclick=()=>{document.querySelectorAll(".product-edit").forEach((box,i)=>{box.querySelectorAll("[data-k]").forEach(inp=>{let v=inp.value;if(inp.dataset.k==="price"||inp.dataset.k==="oldPrice")v=Number(v)||0;data.products[i][inp.dataset.k]=v})});save();render();alert("Produkter sparade")}
+
+$("exportBtn").onclick=()=>{const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="respect-cfw-data.json";a.click();URL.revokeObjectURL(a.href)}
+$("importFile").onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{data=JSON.parse(r.result);save();fillAdmin();render();alert("Importerad")}catch(err){alert("Ogiltig JSON")}};r.readAsText(f)}
+$("resetBtn").onclick=()=>{if(confirm("Återställ allt?")){data=clone(defaults);save();fillAdmin();render()}}
+render();
+</script>
+</body>
+</html>
