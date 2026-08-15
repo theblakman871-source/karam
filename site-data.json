@@ -93,7 +93,22 @@
       "description": "Smidiga butikstjänster – bland annat kontantuttag."
     }
   ],
-  "products": [],
+  "products": [
+    {
+      "id": "p-1786793372301",
+      "name": "rtyuiopö",
+      "category": "Kategori",
+      "description": "Kort beskrivning.",
+      "image": "",
+      "price": 23,
+      "oldPrice": 0,
+      "stock": 6,
+      "badge": "",
+      "active": true,
+      "featured": false,
+      "ageRestricted": false
+    }
+  ],
   "video": {
     "title": "Se vad som händer hos Frosta",
     "text": "Här kan du visa en kort film från butiken, nya varor, en rundtur eller veckans nyheter.",
@@ -150,7 +165,7 @@
     }
   ],
   "meta": {
-    "lastPublished": ""
+    "lastPublished": "2026-08-15 13:29:46"
   },
   "shop": {
     "enabled": true,
