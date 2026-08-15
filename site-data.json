@@ -95,6 +95,20 @@
   ],
   "products": [
     {
+      "id": "p-1786791615693",
+      "name": "Sneckers",
+      "category": "Choklad",
+      "description": "Choklad för allaaa.",
+      "image": "media/product-1786791650829.jpg",
+      "price": 12,
+      "oldPrice": 0,
+      "stock": 400,
+      "badge": "",
+      "active": true,
+      "featured": false,
+      "ageRestricted": false
+    },
+    {
       "id": "p-1786791025752",
       "name": "Takis Hot sour",
       "category": "Kategori",
@@ -165,7 +179,7 @@
     }
   ],
   "meta": {
-    "lastPublished": "2026-08-15 12:54:18"
+    "lastPublished": "2026-08-15 13:01:14"
   },
   "shop": {
     "enabled": true,
