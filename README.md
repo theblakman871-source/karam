@@ -1,2 +1,0 @@
-# karam
-for funny
