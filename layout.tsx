@@ -1,0 +1,1 @@
+import type {Metadata} from "next";import "./globals.css";export const metadata:Metadata={title:"Frosta Tobak & Livs V10",description:"Erbjudanden, sortiment, öppettider och service hos Frosta Tobak & Livs i Höör.",icons:{icon:"/frosta-logo.png"}};export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="sv"><body>{children}</body></html>}
