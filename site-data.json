@@ -99,7 +99,7 @@
       "name": "Sneckers",
       "category": "Choklad",
       "description": "Kort beskrivning.",
-      "image": "media/product-1786791716371.jpg",
+      "image": "media/product-1786791824816.jpg",
       "price": 12,
       "oldPrice": 0,
       "stock": 30,
@@ -179,7 +179,7 @@
     }
   ],
   "meta": {
-    "lastPublished": "2026-08-15 13:02:43"
+    "lastPublished": "2026-08-15 13:03:50"
   },
   "shop": {
     "enabled": true,
