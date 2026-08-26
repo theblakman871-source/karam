@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#08080b" />
+  <title>Admin – Blendxo Cuts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="admin-body">
+  <div id="loginView" class="login-shell">
+    <div class="login-card">
+      <div class="brand graffiti-logo center"><span class="logo-crown">♛</span><span class="logo-word">BLENDXO</span><span class="logo-cuts">CUTS</span></div>
+      <h1>Adminpanel</h1>
+      <p>Logga in för att hantera bokningar, tjänster, priser, bilder och kontaktinställningar.</p>
+      <form id="loginForm">
+        <label>E-post<input id="email" type="email" required></label>
+        <label>Lösenord<input id="password" type="password" required></label>
+        <button class="btn full" type="submit">Logga in</button>
+      </form>
+      <button type="button" class="link-btn" id="forgotPasswordBtn">Glömt lösenord? Skicka återställningslänk</button>
+      <div id="demoHint" class="demo-hint">Produktionsläge: Supabase.</div>
+      <div id="loginError" class="error-text"></div>
+    </div>
+  </div>
+
+  <div id="adminView" class="admin-shell hidden">
+    <aside class="sidebar">
+      <a class="brand graffiti-logo" href="index.html"><span class="logo-crown">♛</span><span class="logo-word">BLENDXO</span><span class="logo-cuts">CUTS</span></a>
+      <button class="nav-btn active" data-tab="dashboard">Översikt</button>
+      <button class="nav-btn" data-tab="bookings">Bokningar</button>
+      <button class="nav-btn" data-tab="services">Tjänster & priser</button>
+      <button class="nav-btn" data-tab="images">Bilder</button>
+      <button class="nav-btn" data-tab="settings">Inställningar</button>
+      <button id="logoutBtn" class="nav-btn bottom">Logga ut</button>
+    </aside>
+
+    <div class="admin-main">
+      <div class="admin-top"><div><span class="eyebrow">ADMIN</span><h1 id="tabTitle">Översikt</h1></div><a class="btn ghost" href="index.html">Visa hemsidan</a></div>
+
+      <section class="admin-tab" data-panel="dashboard">
+        <div class="stat-grid"><div class="stat"><small>Kommande</small><b id="statUpcoming">0</b></div><div class="stat"><small>Idag</small><b id="statToday">0</b></div><div class="stat"><small>Tjänster</small><b id="statServices">0</b></div></div>
+        <div class="panel"><h2>Senaste bokningarna</h2><div id="latestBookings"></div></div>
+      </section>
+
+      <section class="admin-tab hidden" data-panel="bookings">
+        <div class="panel"><div class="panel-head"><div><h2>Alla bokningar</h2><p>Bekräfta eller avboka direkt här.</p></div><button class="btn btn-small" id="refreshBookings">Uppdatera</button></div><div id="bookingsTable"></div></div>
+      </section>
+
+      <section class="admin-tab hidden" data-panel="services">
+        <div class="panel"><div class="panel-head"><div><h2>Tjänster & priser</h2><p>Lägg till, ändra eller stäng av behandlingar. Ändringarna syns på bokningssidan.</p></div><button class="btn btn-small" id="addServiceBtn">+ Ny tjänst</button></div><div id="serviceEditor"></div></div>
+      </section>
+
+      <section class="admin-tab hidden" data-panel="images">
+        <div class="panel">
+          <div class="panel-head"><div><h2>Bilder</h2><p>Ladda upp bilder direkt från mobilen eller datorn. Du behöver inte öppna Supabase Storage.</p></div></div>
+          <div class="notice"><b>Direkt uppladdning</b><p>Välj en bild från enheten. Adminpanelen laddar automatiskt upp den till Supabase Storage och uppdaterar hemsidan.</p></div>
+          <div id="imageEditor" class="image-editor"></div>
+        </div>
+      </section>
+
+      <section class="admin-tab hidden" data-panel="settings">
+        <div class="panel">
+          <h2>Kontakt & notiser</h2>
+          <p>Det här kan ändras direkt från adminpanelen och sparas i Supabase.</p>
+          <form id="siteSettingsForm" class="form-grid">
+            <label>Telefonnummer på hemsidan<input id="contactPhone" type="tel" placeholder="070-487 70 05"></label>
+            <label>Instagram-användarnamn<input id="instagramHandle" type="text" placeholder="@blendxo_"></label>
+            <label>WhatsApp-nummer för bokningsnotiser<input id="whatsappNumber" type="tel" placeholder="46704877005"><small>Ange gärna landskod, t.ex. 4670...</small></label>
+            <label>E-post för bokningsnotiser<input id="notificationEmail" type="email" placeholder="valfritt"></label>
+            <button class="btn" type="submit">Spara kontaktinställningar</button>
+            <button class="btn ghost" id="testWhatsappBtn" type="button">Testa WhatsApp-numret</button>
+          </form>
+          <div id="settingsMessage" class="success-text"></div>
+          <div class="notice"><b>Automatiska WhatsApp-notiser</b><p>Numret ovan sparas nu i systemet. För att en ny bokning automatiskt ska skickas som WhatsApp-meddelande behöver vi därefter koppla WhatsApp Business Cloud API till Supabase Edge Function. Hemliga API-nycklar ska aldrig läggas på GitHub.</p></div>
+
+          <hr class="panel-sep">
+          <h3>Byt lösenord</h3>
+          <form id="passwordForm" class="form-grid">
+            <label>Nytt lösenord<input id="newPassword" type="password" minlength="8" required placeholder="Minst 8 tecken"></label>
+            <label>Upprepa lösenord<input id="confirmPassword" type="password" minlength="8" required placeholder="Upprepa lösenord"></label>
+            <button class="btn" type="submit">Spara nytt lösenord</button>
+          </form>
+          <div id="passwordMessage" class="success-text"></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
