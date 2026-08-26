@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#08080b" />
+  <title>Blendxo Cuts – Barberare</title>
+  <meta name="description" content="Blendxo Cuts – professionella fades, skägg och styling. Boka din tid online." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#hem" aria-label="Blendxo Cuts hem">
+      <span class="brand-mark">B</span><span><strong>BLENDXO</strong><small>CUTS</small></span>
+    </a>
+    <nav>
+      <a href="#hem">Hem</a><a href="#tjanster">Tjänster</a><a href="#boka">Boka</a><a href="#galleri">Galleri</a><a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="btn btn-small" href="#boka">Boka tid</a>
+  </header>
+
+  <main>
+    <section id="hem" class="hero section-shell">
+      <div class="hero-copy">
+        <div class="eyebrow">PRECISION • STYLE • CONFIDENCE</div>
+        <h1><span>BLENDXO</span><br>CUTS</h1>
+        <p>Mer än bara en klippning. En clean look, skarpa detaljer och en upplevelse byggd kring din stil.</p>
+        <div class="hero-actions"><a class="btn" href="#boka">Boka din tid</a><a class="btn ghost" href="#tjanster">Se tjänster</a></div>
+        <div class="social-row"><a href="https://www.instagram.com/blendxo_?igsi=MW93MnRiOWxqcGZ0Nw==" target="_blank" rel="noreferrer">Instagram @blendxo_</a><a href="tel:+46704877005">070-487 70 05</a></div>
+      </div>
+      <div class="hero-art image-slot" data-image-key="hero">
+        <div class="image-fallback"><span>BLENDXO</span><small>Din bild här</small></div>
+      </div>
+    </section>
+
+    <section id="tjanster" class="section-shell block-section">
+      <div class="section-heading"><span class="eyebrow">VÅRA TJÄNSTER</span><h2>Välj din look</h2><p>Priser och tjänster kan ändras direkt i adminpanelen.</p></div>
+      <div id="serviceGrid" class="service-grid"></div>
+    </section>
+
+    <section class="why section-shell">
+      <div class="why-image image-slot" data-image-key="about"><div class="image-fallback"><span>FRESH CUTS</span><small>Admin kan byta bilden</small></div></div>
+      <div class="why-copy"><span class="eyebrow">VARFÖR BLENDXO?</span><h2>Detaljerna gör skillnaden.</h2>
+        <div class="feature"><b>✦ Precision och kvalitet</b><p>Varje klippning formas efter hår, huvudform och önskat resultat.</p></div>
+        <div class="feature"><b>✦ Modern stil</b><p>Fades, taper, skägg och styling med fokus på ett rent slutresultat.</p></div>
+        <div class="feature"><b>✦ Smidig bokning</b><p>Välj behandling och tid direkt på mobilen. Bokningen hamnar i adminpanelen.</p></div>
+      </div>
+    </section>
+
+    <section id="boka" class="section-shell booking-section">
+      <div class="section-heading"><span class="eyebrow">BOKA ONLINE</span><h2>Boka din tid</h2><p>Välj behandling, datum och tid. Du får en bekräftelse direkt.</p></div>
+      <div class="booking-card">
+        <form id="bookingForm">
+          <div class="form-grid">
+            <label>Tjänst<select id="bookingService" required></select></label>
+            <label>Datum<input id="bookingDate" type="date" required></label>
+            <label>Tid<select id="bookingTime" required></select></label>
+            <label>Namn<input id="bookingName" type="text" autocomplete="name" required placeholder="Ditt namn"></label>
+            <label>Telefon<input id="bookingPhone" type="tel" autocomplete="tel" required placeholder="07X-XXX XX XX"></label>
+            <label>Instagram / kommentar<input id="bookingNote" type="text" placeholder="Valfritt"></label>
+          </div>
+          <div class="booking-summary" id="bookingSummary">Välj en tjänst för att se bokningssammanfattningen.</div>
+          <button class="btn full" type="submit">Bekräfta bokning</button>
+          <p class="form-note">Bokningen är inte en drop-in-garanti förrän tiden är bekräftad av Blendxo Cuts.</p>
+        </form>
+      </div>
+      <div id="bookingSuccess" class="success-box hidden"></div>
+    </section>
+
+    <section id="galleri" class="section-shell block-section">
+      <div class="section-heading"><span class="eyebrow">GALLERI</span><h2>Senaste looks</h2><p>Galleriinnehållet kan hanteras från adminpanelen.</p></div>
+      <div id="galleryGrid" class="gallery-grid"></div>
+    </section>
+
+    <section id="kontakt" class="cta section-shell">
+      <div><span class="eyebrow">REDO FÖR EN NY LOOK?</span><h2>Boka när det passar dig.</h2><p>Har du frågor? Ring eller skriv via Instagram.</p></div>
+      <div class="hero-actions"><a class="btn" href="#boka">Boka nu</a><a class="btn ghost" href="tel:+46704877005">Ring 070-487 70 05</a></div>
+    </section>
+  </main>
+
+  <footer><div class="brand"><span class="brand-mark">B</span><span><strong>BLENDXO</strong><small>CUTS</small></span></div><p>© <span id="year"></span> Blendxo Cuts</p><a href="admin.html">Admin</a></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
