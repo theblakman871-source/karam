@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0f0f10" />
+  <meta name="description" content="Boka klippning, skägg och barberartjänster snabbt via WhatsApp." />
+  <title>Karam Barber — Boka tid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Till startsidan">
+      <span class="brand-emblem" aria-hidden="true">
+        <svg viewBox="0 0 76 76" role="img">
+          <circle cx="38" cy="38" r="34" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M21 51V25h6v10l12-10h8L33 37l16 14h-9L27 39v12z" fill="currentColor"/>
+          <path d="M53 20l2.4 5 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.9-3.8 5.4-.8z" fill="currentColor" opacity=".82"/>
+        </svg>
+      </span>
+      <span class="brand-copy">
+        <strong data-shop-name>KARAM BARBER</strong>
+        <small>BARBER • GROOMING • STYLE</small>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-label="Öppna meny" aria-expanded="false">☰</button>
+    <nav class="main-nav" aria-label="Huvudmeny">
+      <a href="#services">Tjänster</a>
+      <a href="#about">Om oss</a>
+      <a href="#hours">Öppettider</a>
+      <button class="btn btn-small btn-outline" data-open-booking>Boka tid</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="hero-copy">
+        <p class="eyebrow">Modern barbering. Klassisk precision.</p>
+        <h1>En skarp look börjar med rätt barberare.</h1>
+        <p class="hero-lead">Boka klippning, skäggtrimning eller komplett grooming på några sekunder. Din bokning förbereds direkt för WhatsApp.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" data-open-booking>Boka via WhatsApp</button>
+          <a class="btn btn-ghost" href="#services">Se tjänster</a>
+        </div>
+        <div class="trust-row" aria-label="Fördelar">
+          <span>✓ Snabb bokning</span>
+          <span>✓ Mobilanpassad</span>
+          <span>✓ Direktkontakt</span>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="hero-card">
+          <div class="hero-card-mark">K</div>
+          <p>EST. 2026</p>
+          <strong>DETAILS MAKE THE DIFFERENCE</strong>
+          <span class="hero-line"></span>
+          <span>HAIRCUT • BEARD • STYLE</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="marquee" aria-label="Tjänster i korthet">
+      <div>HAIRCUT <span>✦</span> SKIN FADE <span>✦</span> BEARD TRIM <span>✦</span> HOT TOWEL <span>✦</span> GROOMING <span>✦</span></div>
+    </section>
+
+    <section id="services" class="section section-shell">
+      <div class="section-heading">
+        <p class="eyebrow">Tjänster</p>
+        <h2>Välj din behandling</h2>
+        <p>Priser och tjänster kan ändras direkt i adminpanelen utan att du behöver röra koden.</p>
+      </div>
+      <div id="servicesGrid" class="services-grid"></div>
+    </section>
+
+    <section id="about" class="section section-shell split-section">
+      <div class="panel panel-accent">
+        <p class="eyebrow">Om salongen</p>
+        <h2>Precision i varje detalj.</h2>
+        <p>En modern barberarupplevelse med fokus på rena linjer, personlig service och ett resultat som håller formen även efter att du lämnat stolen.</p>
+      </div>
+      <div class="panel">
+        <div class="stat-grid">
+          <div><strong>01</strong><span>Välj tjänst</span></div>
+          <div><strong>02</strong><span>Välj datum och tid</span></div>
+          <div><strong>03</strong><span>Skicka bokningen i WhatsApp</span></div>
+          <div><strong>04</strong><span>Få bekräftelse direkt</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="hours" class="section section-shell info-grid">
+      <article class="info-card">
+        <p class="eyebrow">Öppettider</p>
+        <h3>När vi är på plats</h3>
+        <div id="hoursList" class="hours-list"></div>
+      </article>
+      <article class="info-card">
+        <p class="eyebrow">Hitta hit</p>
+        <h3 data-shop-name>Karam Barber</h3>
+        <p id="shopAddress">Adress anges i adminpanelen</p>
+        <p id="shopPhone">Telefon anges i adminpanelen</p>
+        <button class="btn btn-primary" data-open-booking>Boka nu</button>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer section-shell">
+    <div>
+      <strong data-shop-name>KARAM BARBER</strong>
+      <p>Barber • Grooming • Style</p>
+    </div>
+    <div class="footer-links">
+      <a href="#services">Tjänster</a>
+      <a href="#hours">Öppettider</a>
+      <button class="link-button" id="adminOpen">Admin</button>
+    </div>
+    <small>© <span id="year"></span> <span data-shop-name>Karam Barber</span>. Alla rättigheter förbehållna.</small>
+  </footer>
+
+  <!-- Booking modal -->
+  <dialog id="bookingDialog" class="modal">
+    <form id="bookingForm" class="modal-card" method="dialog">
+      <button class="modal-close" type="button" data-close-booking aria-label="Stäng">×</button>
+      <p class="eyebrow">Boka tid</p>
+      <h2>Skicka bokningen via WhatsApp</h2>
+      <p class="modal-intro">Fyll i uppgifterna. När du fortsätter öppnas WhatsApp med ett färdigt bokningsmeddelande som du själv skickar.</p>
+
+      <div class="form-grid">
+        <label>För- och efternamn
+          <input name="name" autocomplete="name" required maxlength="80" placeholder="Ditt namn" />
+        </label>
+        <label>Telefonnummer
+          <input name="phone" autocomplete="tel" required maxlength="30" placeholder="07X XXX XX XX" />
+        </label>
+        <label>Tjänst
+          <select name="service" id="bookingService" required></select>
+        </label>
+        <label>Barberare
+          <select name="barber" id="bookingBarber" required></select>
+        </label>
+        <label>Datum
+          <input name="date" id="bookingDate" type="date" required />
+        </label>
+        <label>Tid
+          <select name="time" id="bookingTime" required></select>
+        </label>
+      </div>
+
+      <label>Kommentar <span class="optional">(valfritt)</span>
+        <textarea name="note" rows="3" maxlength="300" placeholder="Till exempel önskemål om frisyr"></textarea>
+      </label>
+
+      <label class="checkline">
+        <input type="checkbox" required />
+        <span>Jag bekräftar att uppgifterna ovan stämmer.</span>
+      </label>
+
+      <div id="bookingAvailabilityNotice" class="notice" hidden></div>
+      <button class="btn btn-primary btn-full" type="submit">Fortsätt till WhatsApp</button>
+      <small class="fine-print">Bokningen blir slutgiltig när salongen har bekräftat tiden.</small>
+    </form>
+  </dialog>
+
+  <!-- Admin login -->
+  <dialog id="adminLoginDialog" class="modal">
+    <form id="adminLoginForm" class="modal-card modal-card-small">
+      <button class="modal-close" type="button" data-close-admin-login aria-label="Stäng">×</button>
+      <p class="eyebrow">Admin</p>
+      <h2>Logga in</h2>
+      <label>Lösenord
+        <input id="adminPassword" type="password" required autocomplete="current-password" />
+      </label>
+      <p id="loginError" class="form-error" hidden>Fel lösenord.</p>
+      <button class="btn btn-primary btn-full" type="submit">Logga in</button>
+    </form>
+  </dialog>
+
+  <!-- Admin panel -->
+  <dialog id="adminDialog" class="modal modal-wide">
+    <div class="modal-card admin-card">
+      <button class="modal-close" type="button" data-close-admin aria-label="Stäng">×</button>
+      <div class="admin-head">
+        <div>
+          <p class="eyebrow">Adminpanel</p>
+          <h2>Hantera hemsidan</h2>
+        </div>
+        <button id="adminLogout" class="btn btn-small btn-outline" type="button">Logga ut</button>
+      </div>
+
+      <div class="admin-tabs" role="tablist">
+        <button type="button" class="admin-tab active" data-tab="settings">Inställningar</button>
+        <button type="button" class="admin-tab" data-tab="services">Tjänster</button>
+        <button type="button" class="admin-tab" data-tab="bookings">Bokningar</button>
+        <button type="button" class="admin-tab" data-tab="security">Säkerhet</button>
+      </div>
+
+      <section class="admin-pane active" data-pane="settings">
+        <form id="settingsForm" class="admin-form">
+          <div class="form-grid">
+            <label>Salongens namn
+              <input name="shopName" required maxlength="60" />
+            </label>
+            <label>WhatsApp-nummer
+              <input name="whatsapp" required placeholder="46701234567" inputmode="tel" />
+              <small>Internationellt format utan +, mellanslag eller bindestreck.</small>
+            </label>
+            <label>Telefon som visas
+              <input name="displayPhone" placeholder="070-123 45 67" />
+            </label>
+            <label>Adress
+              <input name="address" placeholder="Gatuadress, stad" />
+            </label>
+            <label>Öppningstid
+              <input name="openTime" type="time" required />
+            </label>
+            <label>Stängningstid
+              <input name="closeTime" type="time" required />
+            </label>
+            <label>Tidsintervall
+              <select name="slotMinutes">
+                <option value="15">15 minuter</option>
+                <option value="30">30 minuter</option>
+                <option value="45">45 minuter</option>
+                <option value="60">60 minuter</option>
+              </select>
+            </label>
+            <label>Öppna dagar
+              <select name="openDays" multiple size="7">
+                <option value="1">Måndag</option>
+                <option value="2">Tisdag</option>
+                <option value="3">Onsdag</option>
+                <option value="4">Torsdag</option>
+                <option value="5">Fredag</option>
+                <option value="6">Lördag</option>
+                <option value="0">Söndag</option>
+              </select>
+            </label>
+          </div>
+          <label>Barberare <small>(en per rad)</small>
+            <textarea name="barbers" rows="4" placeholder="Valfri barberare\nKaram"></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit">Spara inställningar</button>
+          <p class="success-message" id="settingsSaved" hidden>Inställningarna är sparade.</p>
+        </form>
+      </section>
+
+      <section class="admin-pane" data-pane="services">
+        <div class="admin-section-head">
+          <div><h3>Tjänster</h3><p>Lägg till, ändra eller ta bort tjänster.</p></div>
+          <button id="addService" class="btn btn-small btn-primary" type="button">+ Ny tjänst</button>
+        </div>
+        <div id="servicesAdminList" class="admin-list"></div>
+      </section>
+
+      <section class="admin-pane" data-pane="bookings">
+        <div class="admin-section-head">
+          <div><h3>Lokalt sparade bokningar</h3><p>Bokningar från den här webbläsaren visas här.</p></div>
+          <div class="button-row">
+            <button id="exportBookings" class="btn btn-small btn-outline" type="button">Exportera CSV</button>
+            <button id="clearBookings" class="btn btn-small btn-danger" type="button">Rensa alla</button>
+          </div>
+        </div>
+        <div id="bookingsList" class="admin-list"></div>
+      </section>
+
+      <section class="admin-pane" data-pane="security">
+        <form id="passwordForm" class="admin-form narrow-form">
+          <h3>Byt administratörslösenord</h3>
+          <label>Nuvarande lösenord
+            <input name="currentPassword" type="password" required autocomplete="current-password" />
+          </label>
+          <label>Nytt lösenord
+            <input name="newPassword" type="password" required minlength="8" autocomplete="new-password" />
+          </label>
+          <label>Upprepa nytt lösenord
+            <input name="confirmPassword" type="password" required minlength="8" autocomplete="new-password" />
+          </label>
+          <p id="passwordMessage" class="form-error" hidden></p>
+          <button class="btn btn-primary" type="submit">Byt lösenord</button>
+        </form>
+      </section>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="database.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
