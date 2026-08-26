@@ -1,8 +1,7 @@
-// Blendxo Cuts production config.
-// Fyll i Project URL och Publishable/anon key från Supabase > Project Settings > API.
-// Lägg ALDRIG service_role, SMS-, WhatsApp- eller andra hemliga nycklar här.
+// Fyll i dessa två värden när Supabase-projektet är skapat.
+// Anon-nyckeln är avsedd att kunna finnas i frontend. RLS skyddar datan.
 window.BLENDXO_CONFIG = {
-  supabaseUrl: 'https://cufnnllmvoecmeczrlon.supabase.co',
-  supabaseAnonKey: 'sb_publishable_CMZiQCutzoHpIpIAFfveZA_GrYWY1QI',
-  mode: 'supabase'
+  supabaseUrl: '',
+  supabaseAnonKey: '',
+  mode: 'demo' // ändra till 'supabase' när ovanstående är ifyllt
 };
